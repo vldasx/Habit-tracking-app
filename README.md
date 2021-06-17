@@ -22,24 +22,24 @@ There are  “Developer” files which are python versions of exe file, and they
 
 2. Plain user instructions:
 
-Download files
+Clone the repo !!!
 https://github.com/vldasx/Habit-tracking-app/blob/main/HabitTracker_Miletin_Vladimir_91912710_OOFPP.exe  and
 https://github.com/vldasx/Habit-tracking-app/blob/main/HabitTrackerData.json 
 
 ![image](https://user-images.githubusercontent.com/38176126/121818513-fe0f5100-cc87-11eb-99d0-8b9b674f2bd3.png)
 
-and put them in the same folder. Double click on the exe file will start the program. The window will open, and it is ready to go. First three habits are test data and they will be shown when “t” is chosen as shown in the picture. This is also the main switchboard, all the possibilities are shown here. After every update of the finished habit, fresh data for this habit will be calculated and displayed.
+and put them in the same folder. Run the exe file. The window will open, and it is ready to go. First three habits are test data and they will be shown when “t” is chosen as shown in the picture. This is also the main switchboard, all the possibilities are shown here. After every update of the finished habit, fresh data for this habit will be calculated and displayed.
 
 
 	
 
 2.2 Developer / tester instructions:
 
-Download files
+Clone the repo
 https://github.com/vldasx/Habit-tracking-app/blob/main/HabitTracker_Miletin_Vladimir_91912710_OOFPP.py  ,
 https://github.com/vldasx/Habit-tracking-app/blob/main/HabitTrackerData.json  and
 https://github.com/vldasx/Habit-tracking-app/blob/main/HabitTracker_test_data_generator.py 
-and put them in the same folder. Open python programs (HabitTracker and HabitTracker_test_data_generator) in IDE like Spyder or PyCharm, where code can be changed and run. Behaviour of the program is the same as described. Test data generator have raw data sets that are useful for preparing test sets. The list contains all dates in one row one after another, allowing the user/tester to arrange and group dates for better clarity. Also, it is possible to comment out unused data by selecting those rows and pressing ctrl+1 (or uncomment them the same way). No additional steps are needed, HabitTrackerData.json will be created when running this python script. 
+and put them in the same folder. Run python programs (HabitTracker and HabitTracker_test_data_generator). Behaviour of the program is the same as described. Test data generator have raw data sets that are useful for preparing test sets. The list contains all dates in one row one after another, allowing the user/tester to arrange and group dates for better clarity. Also, it is possible to comment out unused data by selecting those rows and pressing ctrl+1 (or uncomment them the same way). No additional steps are needed, HabitTrackerData.json will be created when running this python script. 
 
 ![image](https://user-images.githubusercontent.com/38176126/121819203-1c774b80-cc8c-11eb-83b0-2459bff13cc4.png)
 
