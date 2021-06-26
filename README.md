@@ -34,9 +34,18 @@ Clone the repo / download zip https://github.com/vldasx/Habit-tracking-app and p
 
 ![image](https://user-images.githubusercontent.com/38176126/123512019-4a459280-d685-11eb-85df-e2e4baed7a34.png)
 
+
 HabitTracker_test_data_generator.py on the picture above shows how data is organized and commented. Simple # comment is chosen because it does not trigger indentation checking, allows additional commenting that will be ignored by exporting and it is easily done for multiple lines (ctrl+1). Here is a case where repeating frequency is 2 days, so the data is organized accordingly in pairs. Comment down-right marks 10 pairs, so it is easily compared with the program output. Picture below is data  with changing frequencies. Comments are used to mark important positions. Those comments will not obstruct JSON data in any way.
 
 ![image](https://user-images.githubusercontent.com/38176126/123512042-6fd29c00-d685-11eb-81b4-1e4485ba2785.png) 
+
+Data from analyse function is set by the sample_test_generator data. This is data set number 5 which has freq value 0, meaning it has variable periods for habit. It is 
+little trickier to calculate than regular repeating period that has only one number for frequency. Dates are splitted for convenience, allowing easy checking and testing.
+Periodicity here is 1, 2, 3, 4, 5 days and than again from beginning. It can be seen from physical arrangement of data.
+
+![image](https://user-images.githubusercontent.com/38176126/123512334-21260180-d687-11eb-9fcb-46ea66fe2b78.png)
+
+
 
 Program testing:
 
