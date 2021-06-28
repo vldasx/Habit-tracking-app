@@ -2,7 +2,7 @@
 
 changing_freq = [1, 2, 3, 4, 5] # list of uneven intervals (in days) used for studying
  
-class Habit:   
+class Habit:    
     """
     Class Habit describes the central figure in the program. 
     It has basic data (name, description) together with data needed for storing dates when habit is done. 

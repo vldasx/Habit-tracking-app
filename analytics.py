@@ -25,7 +25,7 @@ def current_and_longest_streak(self):
         self.current_streak = 0 
         self.longest_streak = 0
         
-    elif len(self.checked) == 1:
+    elif len(self.checked) == 1: 
         """
         Habit only one time checked, both streaks are 1, already set"""
         pass

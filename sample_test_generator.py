@@ -11,7 +11,7 @@ Dates that are not used comment out with ctrl+1, others will be written
 in json file. To return to uncommented state, mark and press again ctrl+1.
 First 3 
 """
-
+ 
 data = [
         # 0 habit
         {"basic" : ["long test habit", "single day ", 1],

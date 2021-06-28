@@ -48,22 +48,67 @@ def save_to_json():
         
         
         
-def analyse(begin, end):
+def analyse():
+    """ 
+    Shows all analytical data. When checked off today, 
+    analytics are calculated again only for this habit """
+    answer = ""
+    print()
+    print(" ------------------")
+    print(" ANALYTICAL SEGMENT")
+    print(" ------------------")
+
+    while answer != "r":
+        answer = input(" a for all streaks,\n o for one habit streaks or\n just type number for all habits with that periodicity \n or r for return: ")
+        if answer == "a":
+            print("\n\nALL STREAKS:\n")
+            print("------------")
+            analyse_loop(0, len(new_habit))
+                
+        elif answer == "o":
+            answer = input("which habit: ")
+            print("\n\nONE HABIT ANALYTICS:\n")
+            print("-------------------")
+            if not answer.isnumeric() or int(answer) > len(new_habit)-1 or int(answer) < 0:
+                print("-----------------") 
+                print("wrong input!")
+                continue                
+            print("Habit number ",answer)
+            current_and_longest_streak(new_habit[int(answer)])
+            continue
+        
+        elif answer.isnumeric():
+            print("-----------------")
+            print("Habits found that have", answer, "days cycle:\n--")
+            for x in range(0, len(new_habit)): 
+                if int(answer) == new_habit[x].frequency:
+                    print("Habit number ",x)
+                    current_and_longest_streak(new_habit[x])
+                    print("-------------") 
+        elif answer == "r":
+            continue
+        else:
+            print("Try again!")
+          
+            
+            
+def analyse_loop(begin, end):
     """ 
     Shows all analytical data. When checked off today, 
     analytics are calculated again only for this habit """
     for x in range(begin, end): 
         print("Habit number ",x)
         current_and_longest_streak(new_habit[x])
-        print("-------------")      
-          
-        
+        print("-------------") 
+                
+
         
 def create_habit(): 
     """creates habit from user input"""
     print("Creating new habit:")
     new_habit.append(Habits.Habit(input("name:"), input("description:"), 
                      int(input("frequency in days or 0 for learning:"))))
+    print("Created!")
     
     
     
@@ -72,6 +117,7 @@ def delete_habit():
     delete = int(input("which habit to delete? (only real data, from number 3): "))
     if delete >= 3 and delete < len(new_habit):
         del new_habit[delete]
+        print("Deleted!")
         #logging.info("Deleted ", delete)
     else:
         print("wrong number!")
@@ -81,7 +127,6 @@ def delete_habit():
 def presenting_habits(): 
     """ Habits are presented together with analytics. There are tests(first 3) and real data. """
     input_check = False   
-    os.system('cls')
     while input_check == False:
         input_test_or_real =  input("test or real habits? t/r: ") 
         print()
@@ -100,23 +145,27 @@ def presenting_habits():
     print("THIS IS", test_or_real, "DATA")
     print("-----------------")
        
-    analyse(begin, end)
-    
-      
+    analyse_loop(begin, end)
+          
     # checking todays work
     quit_check = False
-    while quit_check == False:
+    while quit_check == False: 
         print()
-        print("which habit have you finished today? Type number from 3 ")
-        habit_input = input("or n for new habit, d delete, a analyse, q for quit: ")
+        print("which habit have you finished today? Type number from 3 to", len(new_habit),"or")
+        habit_input = input("n for new habit \nd delete \na analyse  \nq for quit: ")
+        
         if habit_input == "n":
             create_habit()
+            
         if habit_input == "a":
-            analyse(0, len(new_habit))
+            analyse()
+            
         elif habit_input == "d":
             delete_habit()
+            
         elif habit_input == "q":
             quit_check = True
+            
         else:
             if not habit_input.isnumeric() or int(habit_input) > len(new_habit)-1 or int(habit_input) < 3:
                 print("-----------------") 
@@ -132,8 +181,9 @@ def presenting_habits():
 
  
 
-# main program 
+# main cycle 
 def main():
+    os.system('cls')
     print("\n \nWelcome to Habit Tracker v.2.1 \n \nTrack, maintain and support good habits!\n****************************************")
     load_and_create()
     quit_check = False
